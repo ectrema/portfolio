@@ -11,7 +11,6 @@ class XThemeData {
       primaryColor: kSecondRedColorDark,
       accentColor: kSecondWhiteColorDark,
       backgroundColor: kBackgroundColorDark,
-      canvasColor: kThirdColorDark,
       focusColor: Colors.grey[600],
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: kBackgroundColorDark,
@@ -25,7 +24,7 @@ class XThemeData {
         selectionHandleColor: kSecondRedColorDark,
       ),
       iconTheme: IconThemeData(
-        color: kThirdColorDark,
+        color: Colors.white,
         size: 25,
       ),
       textTheme: TextTheme(
@@ -33,6 +32,7 @@ class XThemeData {
         headline2: kHeadLine2,
         bodyText1: kBodyText1,
         subtitle1: kSubTitle1,
+        subtitle2: kSubTitle2,
       ),
       navigationRailTheme: NavigationRailThemeData(
         backgroundColor: kSecondWhiteColorDark,
