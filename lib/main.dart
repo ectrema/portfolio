@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portofolio/core/translation/translation.dart';
 import 'package:portofolio/home/home_view.dart';
 import 'package:portofolio/home/home_view_controller_bindings.dart';
 
@@ -18,6 +19,8 @@ void main() {
           binding: HomeViewControllerBindings(),
         ),
       ],
+      locale: Get.deviceLocale,
+      translationsKeys: Translation.translationsKeys,
       debugShowCheckedModeBanner: false,
       initialRoute: '/home',
     ),
