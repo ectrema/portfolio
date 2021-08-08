@@ -24,41 +24,37 @@ class XThemeData {
         selectionColor: Colors.black12,
         selectionHandleColor: kSecondRedColorDark,
       ),
-      appBarTheme: AppBarTheme(
-        color: kBackgroundColorDark,
-        iconTheme: IconThemeData(
-          color: kThirdColorDark,
-        ),
-        textTheme: TextTheme(
-          headline1: kHeadLine.copyWith(color: kSecondRedColorDark),
-        ),
-      ),
       iconTheme: IconThemeData(
         color: kThirdColorDark,
         size: 25,
       ),
       textTheme: TextTheme(
-        bodyText2: kBodyText.copyWith(
-          color: kSecondWhiteColorDark,
+        headline1: kHeadLine1,
+        headline2: kHeadLine2,
+        bodyText1: kBodyText1,
+        subtitle1: kSubTitle1,
+      ),
+      navigationRailTheme: NavigationRailThemeData(
+        backgroundColor: kSecondWhiteColorDark,
+        elevation: 8,
+        selectedIconTheme: IconThemeData(
+          color: kSecondRedColorDark,
+          size: 22,
         ),
-        subtitle2: kHeadLine.copyWith(
+        selectedLabelTextStyle: kBodyText1.copyWith(
           color: kSecondRedColorDark,
         ),
-        headline1: kHeadLine.copyWith(
-          color: kSecondRedColorDark,
+        unselectedIconTheme: IconThemeData(
+          color: kBackgroundColorDark,
+          size: 22,
         ),
-        headline5: kHeadLine.copyWith(
-          color: kSecondWhiteColorDark,
+        unselectedLabelTextStyle: kBodyText1.copyWith(
+          color: kBackgroundColorDark,
         ),
       ),
-      cardColor: kBackgroundColorDark,
-      inputDecorationTheme: InputDecorationTheme(
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: kSecondRedColorDark),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: kSecondRedColorDark),
-        ),
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: kBackgroundColorDark,
+        elevation: 8,
       ),
     );
   }
