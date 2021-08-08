@@ -19,6 +19,11 @@ const TextStyle kHeadLine2 = TextStyle(
 
 const TextStyle kBodyText1 = TextStyle(
   fontWeight: FontWeight.w300,
+  fontSize: 22,
+);
+
+const TextStyle kBodyTextNavigationRail = TextStyle(
+  fontWeight: FontWeight.w300,
   fontSize: 16,
 );
 

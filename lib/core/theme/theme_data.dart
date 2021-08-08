@@ -41,14 +41,14 @@ class XThemeData {
           color: kSecondRedColorDark,
           size: 22,
         ),
-        selectedLabelTextStyle: kBodyText1.copyWith(
+        selectedLabelTextStyle: kBodyTextNavigationRail.copyWith(
           color: kSecondRedColorDark,
         ),
         unselectedIconTheme: IconThemeData(
           color: kBackgroundColorDark,
           size: 22,
         ),
-        unselectedLabelTextStyle: kBodyText1.copyWith(
+        unselectedLabelTextStyle: kBodyTextNavigationRail.copyWith(
           color: kBackgroundColorDark,
         ),
       ),

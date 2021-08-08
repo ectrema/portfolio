@@ -6,4 +6,5 @@ final Map<String, String> frFR = {
   'resume' : 'Mes projets, mes expériences, mon parcours...',
   'project' : 'Mes projets',
   'network' : 'Réseau sociaux',
+  'myDescription': 'Bonjour, Je suis Minel Benjamin, un jeune développeur qui se spécialise dans le donmaine du développement mobile.\nVous Trouverez ici ma présentation ainsi que quelques projets que j\'ai réalisé.'
 };

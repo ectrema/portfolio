@@ -24,30 +24,8 @@ class HomeView extends GetView<HomeViewController> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _buildHeader(context),
-          _buildBottomSheet(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHeader(BuildContext context) {
-    return SizedBox(
-      height: 350,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Image.asset(
-            'assets/ocean.jpg',
-            width: context.width,
-            fit: BoxFit.cover,
-          ),
-          Positioned(
-            top: 50,
-            child: Text(
-              'resume'.tr,
-              style: Get.textTheme.subtitle1,
-            ),
-          ),
+          _buildMain(),
+          _buildBottomSheet(context),
         ],
       ),
     );
@@ -103,7 +81,7 @@ class HomeView extends GetView<HomeViewController> {
                     width: 25,
                     child: Flag.fromCode(FlagsCode.US),
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -112,7 +90,39 @@ class HomeView extends GetView<HomeViewController> {
     );
   }
 
-  Container _buildBottomSheet() {
+  Widget _buildHeader(BuildContext context) {
+    return SizedBox(
+      height: 350,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Image.asset(
+            'assets/ocean.jpg',
+            width: context.width,
+            fit: BoxFit.cover,
+          ),
+          Positioned(
+            top: 50,
+            child: Text(
+              'resume'.tr,
+              style: Get.textTheme.subtitle1,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMain() {
+    return Center(
+      child: Text(
+        'myDescription'.tr,
+        style: Get.textTheme.bodyText1,
+      ),
+    );
+  }
+
+  Widget _buildBottomSheet(BuildContext context) {
     return Container(
       height: 80,
       child: Row(
@@ -122,59 +132,62 @@ class HomeView extends GetView<HomeViewController> {
             'Minel Benjamin 2021',
             style: Get.textTheme.subtitle2,
           ),
-          Text(
-            'developWithFlutter'.tr,
-            style: Get.textTheme.subtitle2,
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'network'.tr + ' :',
-                  style: Get.textTheme.subtitle2,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                  onTap: () {
-                    Uri emailLaunchUri = Uri(
-                      scheme: 'mailto',
-                      path: 'benjamin.minel@outlook.fr',
-                    );
-                    launch(emailLaunchUri.toString());
-                  },
+          if (context.width > 800)
+            Text(
+              'developWithFlutter'.tr,
+              style: Get.textTheme.subtitle2,
+            ),
+          if (context.width > 635)
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'benjamin.minel@outlook.fr',
+                    'network'.tr + ' :',
                     style: Get.textTheme.subtitle2,
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                  onTap: () {
-                    launch(
-                      'https://github.com/ectrema/portofolio',
-                    );
-                  },
-                  child: Icon(Mdi.github),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () {
+                      Uri emailLaunchUri = Uri(
+                        scheme: 'mailto',
+                        path: 'benjamin.minel@outlook.fr',
+                      );
+                      launch(emailLaunchUri.toString());
+                    },
+                    child: Text(
+                      'benjamin.minel@outlook.fr',
+                      style: Get.textTheme.subtitle2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                  onTap: () {
-                    launch(
-                      'https://www.linkedin.com/in/benjamin-minel-96435a181/',
-                    );
-                  },
-                  child: Icon(Mdi.linkedin),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () {
+                      launch(
+                        'https://github.com/ectrema/portofolio',
+                      );
+                    },
+                    child: Icon(Mdi.github),
+                  ),
                 ),
-              ),
-            ],
-          ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () {
+                      launch(
+                        'https://www.linkedin.com/in/benjamin-minel-96435a181/',
+                      );
+                    },
+                    child: Icon(Mdi.linkedin),
+                  ),
+                ),
+              ],
+            ),
         ],
       ),
     );
