@@ -46,7 +46,17 @@ class _XScaffoldState extends State<XScaffold> {
         minWidth: 100,
         selectedIndex: widget.indexNavigation,
         extended: changeExtende,
-        onDestinationSelected: (int index) {},
+        onDestinationSelected: (int index) {
+          switch (index) {
+            case 0:
+              Get.toNamed('/home');              
+              break;
+            case 1:
+              Get.toNamed('/about-me');              
+              break;
+            default:
+          }
+        },
         destinations: [
           NavigationRailDestination(
             icon: Icon(Icons.home),
