@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
+import 'package:portofolio/core/widget/item_carousel.dart';
+import 'package:portofolio/core/widget/item_inkwell_carousel.dart';
 import 'package:portofolio/core/widget/x_scaffold.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'about_me_view_controller.dart';
@@ -44,41 +46,35 @@ class AboutMeView extends GetView<AboutMeViewController> {
                   ),
                   CarouselSlider(
                     items: [
-                      _buildCarousel(
+                      ItemCarrousel(
                         'assets/raspberry_pi_4.png',
                         'presentationRaspberryPiProjet'.tr,
-                        context,
                       ),
-                      _inkWellCarousel(
+                      ItemInkwellCarrousel(
                         'assets/go.png',
                         'presentationGoLangProjet'.tr,
                         'https://github.com/ectrema/translation_api',
-                        context,
                       ),
-                      _inkWellCarousel(
+                      ItemInkwellCarrousel(
                         'assets/logo_appli_jap.png',
                         'presentationAppliJapProjetV1'.tr,
                         'https://github.com/ectrema/japan_kanji',
-                        context,
                         height: context.height * 0.15,
                       ),
-                      _inkWellCarousel(
+                      ItemInkwellCarrousel(
                         'assets/logo_appli_jap.png',
                         'presentationAppliJapProjetV2'.tr,
                         'https://github.com/ectrema/japanese_v2',
-                        context,
                         height: context.height * 0.15,
                       ),
-                      _buildCarousel(
+                      ItemCarrousel(
                         'assets/pi_hole.png',
                         'presentationPiHoleProjet'.tr,
-                        context,
                         height: context.height * 0.2,
                       ),
-                      _buildCarousel(
+                      ItemCarrousel(
                         'assets/mame.png',
                         'presentationMameProjet'.tr,
-                        context,
                       ),
                     ],
                     options: CarouselOptions(
@@ -97,97 +93,6 @@ class AboutMeView extends GetView<AboutMeViewController> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildCarousel(
-    String pathPicture,
-    String textPresentation,
-    BuildContext context, {
-    double? height,
-  }) {
-    return Container(
-      color: Get.theme.accentColor,
-      padding: const EdgeInsets.all(10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Image.asset(
-              pathPicture,
-              fit: BoxFit.scaleDown,
-              height: height,
-              width: context.width * 0.2,
-            ),
-          ),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    textPresentation,
-                    style: Get.textTheme.bodyText1!
-                        .copyWith(color: Get.theme.backgroundColor),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _inkWellCarousel(
-    String pathPicture,
-    String textPresentation,
-    String link,
-    BuildContext context, {
-    double? height,
-  }) {
-    return Container(
-      color: Get.theme.accentColor,
-      padding: const EdgeInsets.all(10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Image.asset(
-              pathPicture,
-              fit: BoxFit.contain,
-              width: context.width * 0.2,
-              height: height,
-            ),
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Text(
-                    textPresentation,
-                    style: Get.textTheme.bodyText1!
-                        .copyWith(color: Get.theme.backgroundColor),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    launch(
-                      link,
-                    );
-                  },
-                  child: Icon(
-                    Mdi.github,
-                    color: Get.theme.backgroundColor,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
