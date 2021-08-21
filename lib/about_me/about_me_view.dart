@@ -47,19 +47,52 @@ class AboutMeView extends GetView<AboutMeViewController> {
                                       ' ' +
                                       'year'.tr),
                               _buildInfos('mobility'.tr, 'driveLicense'.tr),
+                              _buildInfos('compamy'.tr, 'myCompany'.tr),
+                              _buildInfos('job'.tr, 'myJob'.tr),
+                              _buildInfos('lastDegree'.tr, 'myLastDegree'.tr),
+                              _buildInfos('interest'.tr, 'myInterest'.tr),
                             ],
                           ),
                           Wrap(
-                            children: [
-                              _buildInfos('compamy'.tr, 'myCompany'.tr),
-                              _buildInfos('job'.tr, 'myJob'.tr),
-                            ],
+                            children: [],
                           ),
-                          _buildInfos('lastDegree'.tr, 'myLastDegree'.tr),
-                          _buildInfos('interest'.tr, 'myInterest'.tr),
                         ],
                       ),
                     ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              alignment: Alignment.topLeft,
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 15),
+                    child: Text(
+                      'mySkills'.tr + ' :',
+                      style: Get.textTheme.headline2,
+                    ),
+                  ),
+                  Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.start,
+                    children: [
+                      _buildSkill('Flutter'),
+                      _buildSkill('Dart'),
+                      _buildSkill('Docker'),
+                      _buildSkill('Java'),
+                      _buildSkill('C++'),
+                      _buildSkill('Git'),
+                      _buildSkill('Linux'),
+                      _buildSkill('Jira'),
+                      _buildSkill('Sql'),
+                      _buildSkill('PhpMyAdmin'),
+                      _buildSkill('MacOs'),
+                      _buildSkill('Laravel 8'),
+                    ],
                   ),
                 ],
               ),
@@ -126,6 +159,19 @@ class AboutMeView extends GetView<AboutMeViewController> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildSkill(String skill) {
+    return Container(
+      color: Get.theme.primaryColor.withOpacity(0.4),
+      padding: const EdgeInsets.all(15),
+      margin: const EdgeInsets.all(15),
+      child: Text(
+        skill,
+        style: Get.textTheme.subtitle1,
+        textAlign: TextAlign.center,
       ),
     );
   }

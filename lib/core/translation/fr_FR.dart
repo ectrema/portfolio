@@ -34,7 +34,7 @@ final Map<String, String> frFR = {
   'company':'Entreprise',
   'myCompany':'Xefi Software',
   'myJob':'Développeur d\'application mobile',
-  '':'',
+  'mySkills':'Mes compétences',
   '':'',
   '':'',
 };
