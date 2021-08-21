@@ -49,7 +49,26 @@ class AboutMeView extends GetView<AboutMeViewController> {
                         'presentationRaspberryPiProjet'.tr,
                         context,
                       ),
-                      _golangCarousel(context),
+                      _inkWellCarousel(
+                        'assets/go.png',
+                        'presentationGoLangProjet'.tr,
+                        'https://github.com/ectrema/translation_api',
+                        context,
+                      ),
+                      _inkWellCarousel(
+                        'assets/logo_appli_jap.png',
+                        'presentationAppliJapProjetV1'.tr,
+                        'https://github.com/ectrema/japan_kanji',
+                        context,
+                        height: context.height * 0.15,
+                      ),
+                      _inkWellCarousel(
+                        'assets/logo_appli_jap.png',
+                        'presentationAppliJapProjetV2'.tr,
+                        'https://github.com/ectrema/japanese_v2',
+                        context,
+                        height: context.height * 0.15,
+                      ),
                       _buildCarousel(
                         'assets/pi_hole.png',
                         'presentationPiHoleProjet'.tr,
@@ -121,7 +140,13 @@ class AboutMeView extends GetView<AboutMeViewController> {
     );
   }
 
-  Widget _golangCarousel(BuildContext context) {
+  Widget _inkWellCarousel(
+    String pathPicture,
+    String textPresentation,
+    String link,
+    BuildContext context, {
+    double? height,
+  }) {
     return Container(
       color: Get.theme.accentColor,
       padding: const EdgeInsets.all(10),
@@ -131,9 +156,10 @@ class AboutMeView extends GetView<AboutMeViewController> {
           Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Image.asset(
-              'assets/go.png',
+              pathPicture,
               fit: BoxFit.contain,
               width: context.width * 0.2,
+              height: height,
             ),
           ),
           Expanded(
@@ -142,7 +168,7 @@ class AboutMeView extends GetView<AboutMeViewController> {
               children: [
                 Expanded(
                   child: Text(
-                    'presentationGoLangProjet'.tr,
+                    textPresentation,
                     style: Get.textTheme.bodyText1!
                         .copyWith(color: Get.theme.backgroundColor),
                   ),
@@ -150,7 +176,7 @@ class AboutMeView extends GetView<AboutMeViewController> {
                 InkWell(
                   onTap: () {
                     launch(
-                      'https://github.com/ectrema/translation_api',
+                      link,
                     );
                   },
                   child: Icon(

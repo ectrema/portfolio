@@ -11,9 +11,14 @@ final Map<String, String> frFR = {
   'presentationGoLangProjet':
       'Faire une Api en Golang pour récuperer les traductions de ce site web depuis une bdd sotcker dans un docker sur mon raspberry pi.',
   'presentationRaspberryPiProjet':
-      'Configuration d\'un Raspberry Pi 4 pour des projets persos (Ex: serveur, Api, docker, station de jeux rétro...)',
+      'Configuration d\'un Raspberry Pi 4 pour des projets persos (Ex: serveur, Api, docker, station de jeux rétro...).',
   'presentationPiHoleProjet':
-      'Installation et configuration de pi-hole dans un conteneur docker dans le raspberry pi',
-  'presentationMameProjet': 'Installation et configuration de Mame pour jouer a des jeux rétros sur le raspberry pi. (Si vous avez des Roms je suis preneur Merci!)',
+      'Installation et configuration de pi-hole dans un conteneur docker dans le raspberry pi.',
+  'presentationMameProjet':
+      'Installation et configuration de Mame pour jouer a des jeux rétros sur le raspberry pi. (Si vous avez des Roms je suis preneur Merci!).',
   'myPersonalProject': 'Mes projets personnels',
+  'presentationAppliJapProjetV1':
+      'J\'ai developpé une application pour apprendre le japonais de manière gratuite.',
+  'presentationAppliJapProjetV2':
+      'Refonte de la première application avec un changement d\'architecture et utilisation de GetX.',
 };
