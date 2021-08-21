@@ -20,45 +20,29 @@ class AboutMeView extends GetView<AboutMeViewController> {
       child: SingleChildScrollView(
         child: Column(
           children: [
+            Text('Minel Benjamin'),
+            Text('job'.tr),
             Container(
-              height: 600,
-              width: context.width,
+              margin: const EdgeInsets.only(left: 20),
+              alignment: Alignment.topLeft,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Minel Benjamin'),
-                  Text('job'.tr),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 20),
-                      alignment: Alignment.centerLeft,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'info'.tr + ' :',
-                            style: Get.textTheme.headline2,
-                          ),
-                          Wrap(
-                            children: [
-                              _buildInfos('birthday'.tr, '16/07/1999'),
-                              _buildInfos(
-                                  'age'.tr,
-                                  '${DateTime.now().year - 1999}' +
-                                      ' ' +
-                                      'year'.tr),
-                              _buildInfos('mobility'.tr, 'driveLicense'.tr),
-                              _buildInfos('compamy'.tr, 'myCompany'.tr),
-                              _buildInfos('job'.tr, 'myJob'.tr),
-                              _buildInfos('lastDegree'.tr, 'myLastDegree'.tr),
-                              _buildInfos('interest'.tr, 'myInterest'.tr),
-                            ],
-                          ),
-                          Wrap(
-                            children: [],
-                          ),
-                        ],
-                      ),
-                    ),
+                  Text(
+                    'info'.tr + ' :',
+                    style: Get.textTheme.headline2,
+                  ),
+                  Wrap(
+                    children: [
+                      _buildInfos('birthday'.tr, '16/07/1999'),
+                      _buildInfos('age'.tr,
+                          '${DateTime.now().year - 1999}' + ' ' + 'year'.tr),
+                      _buildInfos('mobility'.tr, 'driveLicense'.tr),
+                      _buildInfos('company'.tr, 'myCompany'.tr),
+                      _buildInfos('job'.tr, 'myJob'.tr),
+                      _buildInfos('lastDegree'.tr, 'myLastDegree'.tr),
+                      _buildInfos('interest'.tr, 'myInterest'.tr),
+                    ],
                   ),
                 ],
               ),
@@ -66,6 +50,7 @@ class AboutMeView extends GetView<AboutMeViewController> {
             Container(
               alignment: Alignment.topLeft,
               margin: const EdgeInsets.symmetric(vertical: 30),
+              padding: const EdgeInsets.only(left: 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -178,25 +163,12 @@ class AboutMeView extends GetView<AboutMeViewController> {
 
   Widget _buildInfos(String text, String text2) {
     return Container(
-      width: (text.length + text2.length) * 17,
       margin: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+      padding: const EdgeInsets.all(15),
       color: Get.theme.accentColor.withOpacity(0.5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            '$text : ',
-            style: Get.textTheme.subtitle1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          Flexible(
-            child: Text(
-              text2,
-              style: Get.textTheme.subtitle1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-        ],
+      child: Text(
+        '$text : $text2',
+        style: Get.textTheme.subtitle1,
       ),
     );
   }
