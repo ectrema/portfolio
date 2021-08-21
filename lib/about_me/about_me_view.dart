@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdi/mdi.dart';
 import 'package:portofolio/core/widget/item_carousel.dart';
 import 'package:portofolio/core/widget/item_inkwell_carousel.dart';
 import 'package:portofolio/core/widget/x_scaffold.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'about_me_view_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -23,17 +21,52 @@ class AboutMeView extends GetView<AboutMeViewController> {
         child: Column(
           children: [
             Container(
-              height: 400,
+              height: 600,
               width: context.width,
               child: Column(
                 children: [
                   Text('Minel Benjamin'),
                   Text('job'.tr),
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 20),
+                      alignment: Alignment.centerLeft,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'info'.tr + ' :',
+                            style: Get.textTheme.headline2,
+                          ),
+                          Wrap(
+                            children: [
+                              _buildInfos('birthday'.tr, '16/07/1999'),
+                              _buildInfos(
+                                  'age'.tr,
+                                  '${DateTime.now().year - 1999}' +
+                                      ' ' +
+                                      'year'.tr),
+                              _buildInfos('mobility'.tr, 'driveLicense'.tr),
+                            ],
+                          ),
+                          Wrap(
+                            children: [
+                              _buildInfos('compamy'.tr, 'myCompany'.tr),
+                              _buildInfos('job'.tr, 'myJob'.tr),
+                            ],
+                          ),
+                          _buildInfos('lastDegree'.tr, 'myLastDegree'.tr),
+                          _buildInfos('interest'.tr, 'myInterest'.tr),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
             Container(
               width: context.width,
+              margin: const EdgeInsets.only(top: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -93,6 +126,31 @@ class AboutMeView extends GetView<AboutMeViewController> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildInfos(String text, String text2) {
+    return Container(
+      width: (text.length + text2.length) * 17,
+      margin: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+      color: Get.theme.accentColor.withOpacity(0.5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            '$text : ',
+            style: Get.textTheme.subtitle1,
+            overflow: TextOverflow.ellipsis,
+          ),
+          Flexible(
+            child: Text(
+              text2,
+              style: Get.textTheme.subtitle1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
       ),
     );
   }

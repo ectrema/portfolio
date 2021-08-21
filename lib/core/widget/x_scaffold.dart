@@ -66,10 +66,6 @@ class _XScaffoldState extends State<XScaffold> {
             icon: Icon(Icons.account_box),
             label: Text('aboutMe'.tr),
           ),
-          NavigationRailDestination(
-            icon: Icon(Icons.file_present),
-            label: Text('project'.tr),
-          ),
         ],
         leading: SizedBox(
           height: 50,

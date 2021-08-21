@@ -21,7 +21,7 @@ class ItemCarrousel extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 15),
             child: Image.asset(
               pathPicture,
               fit: BoxFit.scaleDown,

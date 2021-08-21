@@ -14,7 +14,6 @@ const TextStyle kHeadLine1 = TextStyle(
 const TextStyle kHeadLine2 = TextStyle(
   fontWeight: FontWeight.w300,
   fontSize: 60,
-  color: kSecondWhiteColorDark,
 );
 
 const TextStyle kBodyText1 = TextStyle(
@@ -30,7 +29,6 @@ const TextStyle kBodyTextNavigationRail = TextStyle(
 const TextStyle kSubTitle1 = TextStyle(
   fontWeight: FontWeight.w300,
   fontSize: 26,
-  color: kSecondWhiteColorDark,
 );
 
 const TextStyle kSubTitle2 = TextStyle(
