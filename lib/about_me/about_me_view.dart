@@ -83,6 +83,33 @@ class AboutMeView extends GetView<AboutMeViewController> {
               ),
             ),
             Container(
+              alignment: Alignment.topLeft,
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              padding: const EdgeInsets.only(left: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 25),
+                    child: Text(
+                      'study'.tr + ' :',
+                      style: Get.textTheme.headline2,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      _buildStudy(
+                          '24/08/20 - 07/09/21', 'licenceLyon'.tr, context),
+                      _buildStudy('2018 - 2019', 'btsVenisieux'.tr, context),
+                      _buildStudy('2017 - 2018', 'iutArles'.tr, context),
+                      _buildStudy('2017', 'baccalaureate'.tr, context),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
               width: context.width,
               margin: const EdgeInsets.only(top: 20),
               child: Column(
@@ -147,6 +174,34 @@ class AboutMeView extends GetView<AboutMeViewController> {
       ),
     );
   }
+
+  Widget _buildStudy(String date, String subtitle, BuildContext context) {
+    return Expanded(
+      child: ListTile(
+        title: Text(
+          date,
+          style: Get.textTheme.subtitle1!.copyWith(
+            color: Get.theme.primaryColor,
+          ),
+        ),
+        subtitle: Container(
+          height: _getHeight(context),
+          decoration: BoxDecoration(
+            color: Get.theme.accentColor.withOpacity(0.5),
+          ),
+          padding: const EdgeInsets.all(20),
+          margin: const EdgeInsets.only(top: 10),
+          child: Text(
+            subtitle,
+            style: Get.textTheme.bodyText1,
+          ),
+        ),
+      ),
+    );
+  }
+
+  double _getHeight(BuildContext context) =>
+      (context.height / (context.width / 1000)) / 3;
 
   Widget _buildSkill(String skill) {
     return Container(
