@@ -25,11 +25,14 @@ class XThemeData {
       ),
       iconTheme: IconThemeData(
         color: Colors.white,
-        size: 25,
+        size: 30,
       ),
       textTheme: TextTheme(
         headline1: kHeadLine1,
         headline2: kHeadLine2,
+        headline3: kheadline3,
+        headline4: kheadline4,
+        headline5: kheadline5,
         bodyText1: kBodyText1,
         subtitle1: kSubTitle1,
         subtitle2: kSubTitle2,

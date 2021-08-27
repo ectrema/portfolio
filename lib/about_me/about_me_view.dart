@@ -70,6 +70,7 @@ class AboutMeView extends GetView<AboutMeViewController> {
                       _buildSkill('Docker'),
                       _buildSkill('Java'),
                       _buildSkill('C++'),
+                      _buildSkill('C'),
                       _buildSkill('Git'),
                       _buildSkill('Linux'),
                       _buildSkill('Jira'),

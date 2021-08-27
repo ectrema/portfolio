@@ -7,7 +7,7 @@ final Map<String, String> frFR = {
   'project': 'Mes projets',
   'network': 'Réseau sociaux',
   'myDescription':
-      'Bonjour, Je suis Minel Benjamin, un jeune développeur qui se spécialise dans le donmaine du développement mobile.\nVous trouverez ici ma présentation ainsi que quelques projets que j\'ai réalisé.',
+      'un jeune développeur qui se spécialise dans le domaine du développement mobile.',
   'presentationGoLangProjet':
       'Faire une Api en Golang pour récuperer les traductions de ce site web depuis une bdd sotcker dans un docker sur mon raspberry pi.',
   'presentationRaspberryPiProjet':
