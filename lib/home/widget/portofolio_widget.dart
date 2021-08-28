@@ -1,5 +1,7 @@
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:mdi/mdi.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PortofolioWidget extends StatefulWidget {
   const PortofolioWidget({Key? key}) : super(key: key);
@@ -51,6 +53,7 @@ class _PortofolioWidgetState extends State<PortofolioWidget> {
                   'golang.png',
                   AppLocalizations.of(context)!.presentationGoLangProjet,
                   1,
+                  link: 'https://github.com/ectrema/translation_api',
                 ),
                 _buildProject(
                   context,
@@ -71,12 +74,14 @@ class _PortofolioWidgetState extends State<PortofolioWidget> {
                   'jap_appli.png',
                   AppLocalizations.of(context)!.presentationAppliJapProjetV1,
                   3,
+                  link: 'https://github.com/ectrema/japan_kanji',
                 ),
                 _buildProject(
                   context,
                   'jap_appli.png',
                   AppLocalizations.of(context)!.presentationAppliJapProjetV2,
                   4,
+                  link: 'https://github.com/ectrema/japanese_v2',
                 ),
                 _buildProject(
                   context,
@@ -97,8 +102,9 @@ class _PortofolioWidgetState extends State<PortofolioWidget> {
     BuildContext context,
     String pathPicture,
     String textPresentation,
-    int index,
-  ) {
+    int index, {
+    String? link,
+  }) {
     return Expanded(
       child: MouseRegion(
         onEnter: (event) {
@@ -129,6 +135,22 @@ class _PortofolioWidgetState extends State<PortofolioWidget> {
               margin: const EdgeInsets.all(10),
               child: Image.asset(pathPicture),
             ),
+            if (link != null)
+              Positioned(
+                top: 20,
+                right: 20,
+                child: InkWell(
+                  onTap: () {
+                    launch(
+                      link,
+                    );
+                  },
+                  child: Icon(
+                    Mdi.github,
+                    color: Theme.of(context).backgroundColor,
+                  ),
+                ),
+              ),
             Positioned(
               bottom: 0,
               left: 0,
