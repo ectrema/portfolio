@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class XBottomSheet extends StatelessWidget {
   const XBottomSheet({Key? key}) : super(key: key);
@@ -13,11 +12,11 @@ class XBottomSheet extends StatelessWidget {
         children: [
           Text(
             'Minel Benjamin 2021',
-            style: Get.textTheme.subtitle2,
+            style: Theme.of(context).textTheme.subtitle2,
           ),
           Text(
-            'developWithFlutter'.tr,
-            style: Get.textTheme.subtitle2,
+            'developWithFlutter',
+            style: Theme.of(context).textTheme.subtitle2,
           ),
         ],
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ItemCarrousel extends StatelessWidget {
   final String pathPicture;
@@ -15,7 +14,7 @@ class ItemCarrousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Get.theme.accentColor,
+      color: Theme.of(context).accentColor,
       padding: const EdgeInsets.all(10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -26,7 +25,7 @@ class ItemCarrousel extends StatelessWidget {
               pathPicture,
               fit: BoxFit.scaleDown,
               height: height,
-              width: context.width * 0.2,
+              width: 200,
             ),
           ),
           Expanded(
@@ -35,8 +34,9 @@ class ItemCarrousel extends StatelessWidget {
                 Expanded(
                   child: Text(
                     textPresentation,
-                    style: Get.textTheme.bodyText1!
-                        .copyWith(color: Get.theme.backgroundColor),
+                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                          color: Theme.of(context).backgroundColor,
+                        ),
                   ),
                 ),
               ],

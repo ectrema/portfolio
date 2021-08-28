@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -19,7 +18,7 @@ class ItemInkwellCarrousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Get.theme.accentColor,
+      // color: Theme.of(context).theme.accentColor,
       padding: const EdgeInsets.all(10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -29,7 +28,7 @@ class ItemInkwellCarrousel extends StatelessWidget {
             child: Image.asset(
               pathPicture,
               fit: BoxFit.contain,
-              width: context.width * 0.2,
+              width: 200,
               height: height,
             ),
           ),
@@ -40,8 +39,8 @@ class ItemInkwellCarrousel extends StatelessWidget {
                 Expanded(
                   child: Text(
                     textPresentation,
-                    style: Get.textTheme.bodyText1!
-                        .copyWith(color: Get.theme.backgroundColor),
+                    style: Theme.of(context).textTheme.bodyText1!
+                        .copyWith(color: Theme.of(context).backgroundColor),
                   ),
                 ),
                 InkWell(
@@ -52,7 +51,7 @@ class ItemInkwellCarrousel extends StatelessWidget {
                   },
                   child: Icon(
                     Mdi.github,
-                    color: Get.theme.backgroundColor,
+                    color: Theme.of(context).backgroundColor,
                   ),
                 ),
               ],

@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:portofolio/core/widget/item_carousel.dart';
 import 'package:portofolio/core/widget/item_inkwell_carousel.dart';
-import 'package:portofolio/core/widget/x_scaffold.dart';
-import 'about_me_view_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class AboutMeView extends GetView<AboutMeViewController> {
+class AboutMeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return XScaffold(
-      child: _buildContent(context),
-      indexNavigation: 1,
+    return Scaffold(
+      body: _buildContent(context),
     );
   }
 
@@ -21,7 +17,7 @@ class AboutMeView extends GetView<AboutMeViewController> {
         child: Column(
           children: [
             Text('Minel Benjamin'),
-            Text('job'.tr),
+            Text('job'),
             Container(
               margin: const EdgeInsets.only(left: 20),
               alignment: Alignment.topLeft,
@@ -29,19 +25,19 @@ class AboutMeView extends GetView<AboutMeViewController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'info'.tr + ' :',
-                    style: Get.textTheme.headline2,
+                    'info' + ' :',
+                    style: Theme.of(context).textTheme.headline2,
                   ),
                   Wrap(
                     children: [
-                      _buildInfos('birthday'.tr, '16/07/1999'),
-                      _buildInfos('age'.tr,
-                          '${DateTime.now().year - 1999}' + ' ' + 'year'.tr),
-                      _buildInfos('mobility'.tr, 'driveLicense'.tr),
-                      _buildInfos('company'.tr, 'myCompany'.tr),
-                      _buildInfos('job'.tr, 'myJob'.tr),
-                      _buildInfos('lastDegree'.tr, 'myLastDegree'.tr),
-                      _buildInfos('interest'.tr, 'myInterest'.tr),
+                      _buildInfos('birthday', '16/07/1999', context),
+                      _buildInfos('age',
+                          '${DateTime.now().year - 1999}' + ' ' + 'year', context),
+                      _buildInfos('mobility', 'driveLicense', context),
+                      _buildInfos('company', 'myCompany', context),
+                      _buildInfos('job', 'myJob', context),
+                      _buildInfos('lastDegree', 'myLastDegree', context),
+                      _buildInfos('interest', 'myInterest', context),
                     ],
                   ),
                 ],
@@ -58,26 +54,26 @@ class AboutMeView extends GetView<AboutMeViewController> {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 15),
                     child: Text(
-                      'mySkills'.tr + ' :',
-                      style: Get.textTheme.headline2,
+                      'mySkills' + ' :',
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                   ),
                   Wrap(
                     crossAxisAlignment: WrapCrossAlignment.start,
                     children: [
-                      _buildSkill('Flutter'),
-                      _buildSkill('Dart'),
-                      _buildSkill('Docker'),
-                      _buildSkill('Java'),
-                      _buildSkill('C++'),
-                      _buildSkill('C'),
-                      _buildSkill('Git'),
-                      _buildSkill('Linux'),
-                      _buildSkill('Jira'),
-                      _buildSkill('Sql'),
-                      _buildSkill('PhpMyAdmin'),
-                      _buildSkill('MacOs'),
-                      _buildSkill('Laravel 8'),
+                      _buildSkill('Flutter', context),
+                      _buildSkill('Dart', context),
+                      _buildSkill('Docker', context),
+                      _buildSkill('Java', context),
+                      _buildSkill('C++', context),
+                      _buildSkill('C', context),
+                      _buildSkill('Git', context),
+                      _buildSkill('Linux', context),
+                      _buildSkill('Jira', context),
+                      _buildSkill('Sql', context),
+                      _buildSkill('PhpMyAdmin', context),
+                      _buildSkill('MacOs', context),
+                      _buildSkill('Laravel 8', context),
                     ],
                   ),
                 ],
@@ -94,24 +90,24 @@ class AboutMeView extends GetView<AboutMeViewController> {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 25),
                     child: Text(
-                      'study'.tr + ' :',
-                      style: Get.textTheme.headline2,
+                      'study' + ' :',
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                   ),
                   Row(
                     children: [
                       _buildStudy(
-                          '24/08/20 - 07/09/21', 'licenceLyon'.tr, context),
-                      _buildStudy('2018 - 2019', 'btsVenisieux'.tr, context),
-                      _buildStudy('2017 - 2018', 'iutArles'.tr, context),
-                      _buildStudy('2017', 'baccalaureate'.tr, context),
+                          '24/08/20 - 07/09/21', 'licenceLyon', context),
+                      _buildStudy('2018 - 2019', 'btsVenisieux', context),
+                      _buildStudy('2017 - 2018', 'iutArles', context),
+                      _buildStudy('2017', 'baccalaureate', context),
                     ],
                   ),
                 ],
               ),
             ),
             Container(
-              width: context.width,
+              // width: context.width,
               margin: const EdgeInsets.only(top: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,41 +115,41 @@ class AboutMeView extends GetView<AboutMeViewController> {
                   Padding(
                     padding: const EdgeInsets.only(left: 20, bottom: 20),
                     child: Text(
-                      'myPersonalProject'.tr,
-                      style: Get.textTheme.headline2,
+                      'myPersonalProject',
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                   ),
                   CarouselSlider(
                     items: [
                       ItemCarrousel(
                         'assets/raspberry_pi_4.png',
-                        'presentationRaspberryPiProjet'.tr,
+                        'presentationRaspberryPiProjet',
                       ),
                       ItemInkwellCarrousel(
                         'assets/go.png',
-                        'presentationGoLangProjet'.tr,
+                        'presentationGoLangProjet',
                         'https://github.com/ectrema/translation_api',
                       ),
                       ItemInkwellCarrousel(
                         'assets/logo_appli_jap.png',
-                        'presentationAppliJapProjetV1'.tr,
+                        'presentationAppliJapProjetV1',
                         'https://github.com/ectrema/japan_kanji',
-                        height: context.height * 0.15,
+                        // height: context.height * 0.15,
                       ),
                       ItemInkwellCarrousel(
                         'assets/logo_appli_jap.png',
-                        'presentationAppliJapProjetV2'.tr,
+                        'presentationAppliJapProjetV2',
                         'https://github.com/ectrema/japanese_v2',
-                        height: context.height * 0.15,
+                        // height: context.height * 0.15,
                       ),
                       ItemCarrousel(
                         'assets/pi_hole.png',
-                        'presentationPiHoleProjet'.tr,
-                        height: context.height * 0.2,
+                        'presentationPiHoleProjet',
+                        // height: context.height * 0.2,
                       ),
                       ItemCarrousel(
                         'assets/mame.png',
-                        'presentationMameProjet'.tr,
+                        'presentationMameProjet',
                       ),
                     ],
                     options: CarouselOptions(
@@ -181,50 +177,47 @@ class AboutMeView extends GetView<AboutMeViewController> {
       child: ListTile(
         title: Text(
           date,
-          style: Get.textTheme.subtitle1!.copyWith(
-            color: Get.theme.primaryColor,
+          style: Theme.of(context).textTheme.subtitle1!.copyWith(
+            color: Theme.of(context).primaryColor,
           ),
         ),
         subtitle: Container(
-          height: _getHeight(context),
+          height: 100,
           decoration: BoxDecoration(
-            color: Get.theme.accentColor.withOpacity(0.5),
+            color: Theme.of(context).accentColor.withOpacity(0.5),
           ),
           padding: const EdgeInsets.all(20),
           margin: const EdgeInsets.only(top: 10),
           child: Text(
             subtitle,
-            style: Get.textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyText1,
           ),
         ),
       ),
     );
   }
 
-  double _getHeight(BuildContext context) =>
-      (context.height / (context.width / 1000)) / 3;
-
-  Widget _buildSkill(String skill) {
+  Widget _buildSkill(String skill, BuildContext context) {
     return Container(
-      color: Get.theme.primaryColor.withOpacity(0.4),
+      color: Theme.of(context).primaryColor.withOpacity(0.4),
       padding: const EdgeInsets.all(15),
       margin: const EdgeInsets.all(15),
       child: Text(
         skill,
-        style: Get.textTheme.subtitle1,
+        style: Theme.of(context).textTheme.subtitle1,
         textAlign: TextAlign.center,
       ),
     );
   }
 
-  Widget _buildInfos(String text, String text2) {
+  Widget _buildInfos(String text, String text2, BuildContext context) {
     return Container(
       margin: const EdgeInsets.fromLTRB(10, 15, 10, 15),
       padding: const EdgeInsets.all(15),
-      color: Get.theme.accentColor.withOpacity(0.5),
+      color: Theme.of(context).accentColor.withOpacity(0.5),
       child: Text(
         '$text : $text2',
-        style: Get.textTheme.subtitle1,
+        style: Theme.of(context).textTheme.subtitle1,
       ),
     );
   }

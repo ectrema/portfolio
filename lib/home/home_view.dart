@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mdi/mdi.dart';
 import 'package:portofolio/core/widget/x_bottom_sheet.dart';
-import 'package:portofolio/home/home_view_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class HomeView extends GetView<HomeViewController> {
+class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,20 +41,20 @@ class HomeView extends GetView<HomeViewController> {
         children: [
           Text(
             'Portofolio',
-            style: Get.textTheme.headline2,
+            style: Theme.of(context).textTheme.headline2,
           ),
           Row(
             children: [
               Container(
                 height: 100,
                 width: 100,
-                color: Get.theme.primaryColor,
+                color: Theme.of(context).primaryColor,
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 padding: const EdgeInsets.only(top: 20),
                 child: Center(
                   child: Text(
-                    'about'.tr.capitalizeFirst!,
-                    style: Get.textTheme.subtitle1,
+                    AppLocalizations.of(context)!.about,
+                    style: Theme.of(context).textTheme.subtitle1,
                   ),
                 ),
               ),
@@ -66,8 +65,8 @@ class HomeView extends GetView<HomeViewController> {
                 padding: const EdgeInsets.only(top: 20),
                 child: Center(
                   child: Text(
-                    'portofolio'.tr.capitalizeFirst!,
-                    style: Get.textTheme.subtitle1,
+                    'portofolio',
+                    style: Theme.of(context).textTheme.subtitle1,
                   ),
                 ),
               ),
@@ -78,8 +77,8 @@ class HomeView extends GetView<HomeViewController> {
                 padding: const EdgeInsets.only(top: 20),
                 child: Center(
                   child: Text(
-                    'contact'.tr.capitalizeFirst!,
-                    style: Get.textTheme.subtitle1,
+                    'contact',
+                    style: Theme.of(context).textTheme.subtitle1,
                   ),
                 ),
               ),
@@ -92,27 +91,27 @@ class HomeView extends GetView<HomeViewController> {
 
   Widget _buildMain(BuildContext context) {
     return Container(
-      height: context.height,
-      width: context.width,
+      // height: context.height,
+      // width: context.width,
       margin: const EdgeInsets.only(left: 100),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Bonjour je suis'.tr,
-            style: Get.textTheme.headline4,
+            'Bonjour je suis',
+            style: Theme.of(context).textTheme.headline4,
           ),
           Text(
-            'Benjamin Minel'.tr,
-            style: Get.textTheme.headline3,
+            'Benjamin Minel',
+            style: Theme.of(context).textTheme.headline3,
           ),
           Container(
             margin: const EdgeInsets.only(top: 5, bottom: 15),
             width: 700,
             child: Text(
-              'myDescription'.tr,
-              style: Get.textTheme.headline5,
+              AppLocalizations.of(context)!.myDescription,
+              style: Theme.of(context).textTheme.headline5,
             ),
           ),
           Padding(
@@ -122,8 +121,8 @@ class HomeView extends GetView<HomeViewController> {
                 Padding(
                   padding: const EdgeInsets.only(right: 8.0),
                   child: Text(
-                    'network'.tr + ' :',
-                    style: Get.textTheme.headline5,
+                    AppLocalizations.of(context)!.network + ' :',
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                 ),
                 Padding(
@@ -138,7 +137,7 @@ class HomeView extends GetView<HomeViewController> {
                     },
                     child: Text(
                       'benjamin.minel@outlook.fr',
-                      style: Get.textTheme.headline5,
+                      style: Theme.of(context).textTheme.headline5,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
