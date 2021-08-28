@@ -17,14 +17,16 @@ class HomeView extends StatelessWidget {
   }
 
   Widget _buildContent(BuildContext context) {
+    ScrollController controller = ScrollController();
     return SingleChildScrollView(
+      controller: controller,
       child: Column(
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Column(
               children: [
-                HeaderWidget(),
+                HeaderWidget(controller),
                 MainWidget(),
               ],
             ),
