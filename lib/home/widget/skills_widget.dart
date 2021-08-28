@@ -6,8 +6,9 @@ class SkillsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.only(top: 20, bottom: 20),
+      color: Theme.of(context).canvasColor,
       child: Column(
         children: [
           Text(

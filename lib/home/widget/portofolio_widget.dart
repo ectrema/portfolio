@@ -18,7 +18,6 @@ class _PortofolioWidgetState extends State<PortofolioWidget> {
     return Container(
       width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.only(top: 20),
-      color: Theme.of(context).canvasColor,
       child: Column(
         children: [
           Text(

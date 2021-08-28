@@ -6,8 +6,7 @@ class SchoolsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Theme.of(context).canvasColor,
+    return Padding(
       padding: const EdgeInsets.only(top: 20),
       child: Column(
         children: [
