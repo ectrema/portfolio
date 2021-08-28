@@ -1,3 +1,4 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class XBottomSheet extends StatelessWidget {
@@ -15,7 +16,7 @@ class XBottomSheet extends StatelessWidget {
             style: Theme.of(context).textTheme.subtitle2,
           ),
           Text(
-            'developWithFlutter',
+            AppLocalizations.of(context)!.developWithFlutter,
             style: Theme.of(context).textTheme.subtitle2,
           ),
         ],

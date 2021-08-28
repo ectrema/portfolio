@@ -11,6 +11,7 @@ class XThemeData {
       primaryColor: kSecondRedColorDark,
       accentColor: kSecondWhiteColorDark,
       backgroundColor: kBackgroundColorDark,
+      canvasColor: kSecondBackgroundColorDark,
       focusColor: Colors.grey[600],
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: kBackgroundColorDark,
