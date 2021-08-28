@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portofolio/core/widget/x_bottom_sheet.dart';
 import 'package:portofolio/home/widget/about_me_widget.dart';
+import 'package:portofolio/home/widget/header_widget.dart';
 import 'package:portofolio/home/widget/main_widget.dart';
 import 'package:portofolio/home/widget/portofolio_widget.dart';
 import 'package:portofolio/home/widget/shools_widget.dart';
@@ -21,7 +22,12 @@ class HomeView extends StatelessWidget {
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height,
-            child: MainWidget(),
+            child: Column(
+              children: [
+                HeaderWidget(),
+                MainWidget(),
+              ],
+            ),
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height,
