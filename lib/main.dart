@@ -28,6 +28,7 @@ void main() {
           supportedLocales: [
             Locale('fr', 'FR'),
             Locale('en', 'US'),
+            Locale('ja', 'JP'),
           ],
           debugShowCheckedModeBanner: false,
         );

@@ -57,6 +57,20 @@ class HeaderWidget extends StatelessWidget {
                           child: Flag.fromCode(FlagsCode.US),
                         ),
                       ),
+                      const SizedBox(width: 20),
+                      InkWell(
+                        onTap: () {
+                          LocaleProvider provider = Provider.of<LocaleProvider>(
+                            context,
+                            listen: false,
+                          );
+                          provider.setLocal(Locale('ja', 'JP'));
+                        },
+                        child: SizedBox(
+                          width: 25,
+                          child: Flag.fromCode(FlagsCode.JP),
+                        ),
+                      ),
                     ],
                   ),
                 ),
