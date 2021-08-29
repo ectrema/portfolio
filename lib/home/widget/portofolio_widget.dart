@@ -43,20 +43,20 @@ class _PortofolioWidgetState extends State<PortofolioWidget> {
               children: [
                 _buildProject(
                   context,
-                  'pi_hole.png',
+                  'images/pi_hole.png',
                   AppLocalizations.of(context)!.presentationPiHoleProjet,
                   0,
                 ),
                 _buildProject(
                   context,
-                  'golang.png',
+                  'images/golang.png',
                   AppLocalizations.of(context)!.presentationGoLangProjet,
                   1,
                   link: 'https://github.com/ectrema/translation_api',
                 ),
                 _buildProject(
                   context,
-                  'raspberry_pi_4.png',
+                  'images/raspberry_pi_4.png',
                   AppLocalizations.of(context)!.presentationRaspberryPiProjet,
                   2,
                 ),
@@ -70,21 +70,21 @@ class _PortofolioWidgetState extends State<PortofolioWidget> {
               children: [
                 _buildProject(
                   context,
-                  'jap_appli.png',
+                  'images/jap_appli.png',
                   AppLocalizations.of(context)!.presentationAppliJapProjetV1,
                   3,
                   link: 'https://github.com/ectrema/japan_kanji',
                 ),
                 _buildProject(
                   context,
-                  'jap_appli.png',
+                  'images/jap_appli.png',
                   AppLocalizations.of(context)!.presentationAppliJapProjetV2,
                   4,
                   link: 'https://github.com/ectrema/japanese_v2',
                 ),
                 _buildProject(
                   context,
-                  'mame.png',
+                  'images/mame.png',
                   AppLocalizations.of(context)!.presentationMameProjet,
                   5,
                 ),
@@ -107,20 +107,16 @@ class _PortofolioWidgetState extends State<PortofolioWidget> {
     return Expanded(
       child: MouseRegion(
         onEnter: (event) {
-          if (MediaQuery.of(context).size.height > 375) {
-            setState(() {
-              isExtended = true;
-              currentIndex = index;
-            });
-          }
+          setState(() {
+            isExtended = true;
+            currentIndex = index;
+          });
         },
         onExit: (event) {
-          if (MediaQuery.of(context).size.height > 375) {
-            setState(() {
-              isExtended = false;
-              currentIndex = 0;
-            });
-          }
+          setState(() {
+            isExtended = false;
+            currentIndex = 0;
+          });
         },
         child: Stack(
           children: [

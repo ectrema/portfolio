@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height,
+            height: getHeight(context),
             child: Column(
               children: [
                 HeaderWidget(controller),
@@ -32,24 +32,33 @@ class HomeView extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height,
+            height: getHeight(context),
             child: AboutMeWidget(),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height,
+            height: getHeight(context),
             child: PortofolioWidget(),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height - 80,
+            height: getHeight(context),
             child: SkillsWidget(),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height,
+            height: getHeight(context),
             child: SchoolsWidget(),
           ),
           XBottomSheet(),
         ],
       ),
     );
+  }
+
+  double getHeight(BuildContext context) {
+    if (MediaQuery.of(context).size.height < 750 ||
+        MediaQuery.of(context).size.width < 550) {
+      return 1000;
+    } else {
+      return MediaQuery.of(context).size.height;
+    }
   }
 }

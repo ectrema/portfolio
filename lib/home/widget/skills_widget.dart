@@ -34,50 +34,22 @@ class SkillsWidget extends StatelessWidget {
               children: [
                 Expanded(
                   child: Image.asset(
-                    'flutter.png',
+                    'images/flutter.png',
                   ),
                 ),
                 Expanded(
                   child: Image.asset(
-                    'cpp.png',
+                    'images/cpp.png',
                   ),
                 ),
                 Expanded(
                   child: Image.asset(
-                    'c.png',
+                    'images/c.png',
                   ),
                 ),
                 Expanded(
                   child: Image.asset(
-                    'golang.png',
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const Expanded(child: SizedBox()),
-          Expanded(
-            flex: 2,
-            child: Row(
-              children: [
-                Expanded(
-                  child: Image.asset(
-                    'docker.png',
-                  ),
-                ),
-                Expanded(
-                  child: Image.asset(
-                    'github.png',
-                  ),
-                ),
-                Expanded(
-                  child: Image.asset(
-                    'jira.png',
-                  ),
-                ),
-                Expanded(
-                  child: Image.asset(
-                    'sql.png',
+                    'images/golang.png',
                   ),
                 ),
               ],
@@ -90,22 +62,50 @@ class SkillsWidget extends StatelessWidget {
               children: [
                 Expanded(
                   child: Image.asset(
-                    'linux.png',
+                    'images/docker.png',
                   ),
                 ),
                 Expanded(
                   child: Image.asset(
-                    'laravel.png',
+                    'images/github.png',
                   ),
                 ),
                 Expanded(
                   child: Image.asset(
-                    'java.png',
+                    'images/jira.png',
                   ),
                 ),
                 Expanded(
                   child: Image.asset(
-                    'apple.png',
+                    'images/sql.png',
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Expanded(child: SizedBox()),
+          Expanded(
+            flex: 2,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Image.asset(
+                    'images/linux.png',
+                  ),
+                ),
+                Expanded(
+                  child: Image.asset(
+                    'images/laravel.png',
+                  ),
+                ),
+                Expanded(
+                  child: Image.asset(
+                    'images/java.png',
+                  ),
+                ),
+                Expanded(
+                  child: Image.asset(
+                    'images/apple.png',
                   ),
                 ),
               ],
