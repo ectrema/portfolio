@@ -1,6 +1,6 @@
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
-import 'package:portofolio/core/translation/locale_provider.dart';
+import 'package:portfolio/core/translation/locale_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -19,7 +19,7 @@ class HeaderWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            AppLocalizations.of(context)!.portofolio,
+            AppLocalizations.of(context)!.portfolio,
             style: Theme.of(context).textTheme.headline2,
           ),
           Expanded(
@@ -118,7 +118,7 @@ class HeaderWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 20),
                     child: Center(
                       child: Text(
-                        AppLocalizations.of(context)!.portofolio,
+                        AppLocalizations.of(context)!.portfolio,
                         style: Theme.of(context).textTheme.subtitle1,
                       ),
                     ),

@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class PortofolioWidget extends StatefulWidget {
-  const PortofolioWidget({Key? key}) : super(key: key);
+class PortfolioWidget extends StatefulWidget {
+  const PortfolioWidget({Key? key}) : super(key: key);
 
   @override
-  _PortofolioWidgetState createState() => _PortofolioWidgetState();
+  _PortfolioWidgetState createState() => _PortfolioWidgetState();
 }
 
-class _PortofolioWidgetState extends State<PortofolioWidget> {
+class _PortfolioWidgetState extends State<PortfolioWidget> {
   bool isExtended = false;
   int currentIndex = 0;
   @override

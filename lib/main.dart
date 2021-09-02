@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portofolio/core/translation/locale_provider.dart';
-import 'package:portofolio/home/home_view.dart';
+import 'package:portfolio/core/translation/locale_provider.dart';
+import 'package:portfolio/home/home_view.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +14,7 @@ void main() {
       builder: (context, widget) {
         final localeProvider = Provider.of<LocaleProvider>(context);
         return MaterialApp(
-          title: 'Portofolio Minel Benjamin',
+          title: 'Portfolio Minel Benjamin',
           themeMode: ThemeMode.dark,
           theme: XThemeData.dark(),
           home: HomeView(),
