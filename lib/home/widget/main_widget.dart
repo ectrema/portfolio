@@ -143,6 +143,21 @@ class MainWidget extends StatelessWidget {
                             )
                           ],
                         ),
+                  InkWell(
+                    onTap: () {
+                      launch('document/cv_minel.pdf');
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 300,
+                      color: Theme.of(context).primaryColor,
+                      margin: const EdgeInsets.only(top: 20),
+                      alignment: Alignment.center,
+                      child: Text(
+                        AppLocalizations.of(context)!.downloadCV,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
