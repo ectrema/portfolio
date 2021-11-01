@@ -16,6 +16,11 @@ class HomeView extends StatelessWidget {
     );
   }
 
+  final GlobalKey aboutMeKey = GlobalKey();
+  final GlobalKey portfolioKey = GlobalKey();
+  final GlobalKey skillsKey = GlobalKey();
+  final GlobalKey schoolKey = GlobalKey();
+
   Widget _buildContent(BuildContext context) {
     ScrollController controller = ScrollController();
     return SingleChildScrollView(
@@ -26,24 +31,34 @@ class HomeView extends StatelessWidget {
             height: getHeight(context),
             child: Column(
               children: [
-                HeaderWidget(controller),
+                HeaderWidget(
+                  controller,
+                  aboutMeKey: aboutMeKey,
+                  portfolioKey: portfolioKey,
+                  skillsKey: skillsKey,
+                  schoolKey: schoolKey,
+                ),
                 MainWidget(),
               ],
             ),
           ),
           SizedBox(
+            key: aboutMeKey,
             height: getHeight(context),
             child: AboutMeWidget(),
           ),
           SizedBox(
+            key: portfolioKey,
             height: getHeight(context),
             child: PortfolioWidget(),
           ),
           SizedBox(
+            key: skillsKey,
             height: getHeight(context),
             child: SkillsWidget(),
           ),
           SizedBox(
+            key: schoolKey,
             height: getHeight(context),
             child: SchoolsWidget(),
           ),

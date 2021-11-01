@@ -80,7 +80,7 @@ class _PortfolioWidgetState extends State<PortfolioWidget> {
                   'images/jap_appli.png',
                   AppLocalizations.of(context)!.presentationAppliJapProjetV2,
                   4,
-                  link: 'https://github.com/ectrema/japanese_v2',
+                  link: 'https://github.com/ectrema/jap_v2',
                 ),
                 _buildProject(
                   context,

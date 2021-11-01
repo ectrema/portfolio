@@ -6,8 +6,16 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HeaderWidget extends StatelessWidget {
   final ScrollController controller;
+  final GlobalKey aboutMeKey;
+  final GlobalKey portfolioKey;
+  final GlobalKey skillsKey;
+  final GlobalKey schoolKey;
   const HeaderWidget(
     this.controller, {
+    required this.aboutMeKey,
+    required this.portfolioKey,
+    required this.skillsKey,
+    required this.schoolKey,
     Key? key,
   }) : super(key: key);
 
@@ -75,78 +83,81 @@ class HeaderWidget extends StatelessWidget {
                   ),
                 ),
                 if (MediaQuery.of(context).size.width > 720)
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Theme.of(context).primaryColor,
-                  margin: const EdgeInsets.symmetric(horizontal: 10),
-                  padding: const EdgeInsets.only(top: 20),
-                  child: Center(
-                    child: Text(
-                      AppLocalizations.of(context)!.home,
-                      style: Theme.of(context).textTheme.subtitle1,
+                  Container(
+                    height: 100,
+                    width: 100,
+                    color: Theme.of(context).primaryColor,
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Center(
+                      child: Text(
+                        AppLocalizations.of(context)!.home,
+                        style: Theme.of(context).textTheme.subtitle1,
+                      ),
                     ),
                   ),
-                ),
                 if (MediaQuery.of(context).size.width > 840)
-                InkWell(
-                  onTap: () {
-                    controller.jumpTo(MediaQuery.of(context).size.height);
-                  },
-                  child: Container(
-                    height: 100,
-                    width: 100,
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Center(
-                      child: Text(
-                        AppLocalizations.of(context)!.about,
-                        style: Theme.of(context).textTheme.subtitle1,
+                  InkWell(
+                    onTap: () {
+                      controller
+                          .jumpTo(aboutMeKey.currentContext!.size!.height);
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Center(
+                        child: Text(
+                          AppLocalizations.of(context)!.about,
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
                       ),
                     ),
                   ),
-                ),
                 if (MediaQuery.of(context).size.width > 960)
-                InkWell(
-                  onTap: () {
-                    controller.jumpTo(MediaQuery.of(context).size.height * 2);
-                  },
-                  child: Container(
-                    height: 100,
-                    width: 100,
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Center(
-                      child: Text(
-                        AppLocalizations.of(context)!.portfolio,
-                        style: Theme.of(context).textTheme.subtitle1,
+                  InkWell(
+                    onTap: () {
+                      controller.jumpTo(
+                          portfolioKey.currentContext!.size!.height * 2);
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Center(
+                        child: Text(
+                          AppLocalizations.of(context)!.portfolio,
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
                       ),
                     ),
                   ),
-                ),
                 if (MediaQuery.of(context).size.width > 1080)
-                InkWell(
-                  onTap: () {
-                    controller.jumpTo(MediaQuery.of(context).size.height * 3);
-                  },
-                  child: Container(
-                    height: 100,
-                    width: 130,
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Center(
-                      child: Text(
-                        AppLocalizations.of(context)!.mySkills,
-                        style: Theme.of(context).textTheme.subtitle1,
+                  InkWell(
+                    onTap: () {
+                      controller
+                          .jumpTo(skillsKey.currentContext!.size!.height * 3);
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 130,
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Center(
+                        child: Text(
+                          AppLocalizations.of(context)!.mySkills,
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
                       ),
                     ),
                   ),
-                ),
                 if (MediaQuery.of(context).size.width > 1200)
                   InkWell(
                     onTap: () {
                       controller
-                          .jumpTo(MediaQuery.of(context).size.height * 4 - 75);
+                          .jumpTo(schoolKey.currentContext!.size!.height * 4);
                     },
                     child: Container(
                       height: 100,
